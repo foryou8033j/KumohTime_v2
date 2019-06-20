@@ -2,7 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Hello Electron React!</title>
+    <title>KumohTime</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script>
       (function() {
         if (!process.env.HOT) {
@@ -16,10 +17,21 @@
     </script>
   </head>
   <body>
+    <!-- Modal Structure -->
+    <div id="modal-alert" class="modal">
+      <div class="modal-content">
+        <h4 id="modal-header"></h4>
+        <div id="modal-body"></div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      </div>
+    </div>
     <div id="root"></div>
     <script>
       {
-        const scripts = [];
+        const scripts = [
+        ];
 
         // Dynamically insert the DLL script in development env in the
         // renderer process
@@ -40,6 +52,7 @@
             .map(script => `<script defer src="${script}"><\/script>`)
             .join('')
         );
+
       }
     </script>
   </body>

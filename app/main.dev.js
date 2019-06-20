@@ -15,6 +15,7 @@ import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
 import MenuBuilder from './menu';
 
+
 export default class AppUpdater {
   constructor() {
     log.transports.file.level = 'info';
@@ -70,8 +71,10 @@ app.on('ready', async () => {
   mainWindow = new BrowserWindow({
     show: false,
     width: 1024,
-    height: 728
+    height: 728,
   });
+
+  mainWindow.setMinimumSize(880, 500);
 
   mainWindow.loadURL(`file://${__dirname}/app.html`);
 
