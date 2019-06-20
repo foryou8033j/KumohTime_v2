@@ -1,9 +1,11 @@
 <div align="center">
 <br/>
 <h1>KumohTime</h1>
-<p>Course Timetable Assistant for Kumoh Institute of Technology</p>
+<p>Course Timetable Assistant for Kumoh Institute of Technology</p><br/>
 <img src="https://forthebadge.com/images/badges/built-with-love.svg">
 <img src="https://forthebadge.com/images/badges/uses-js.svg">
+
+<br/>
 
 master<br/>
 [![Build Status](https://semaphoreci.com/api/v1/foryou8033j/kumohtime_v2-2/branches/master/badge.svg)](https://semaphoreci.com/foryou8033j/kumohtime_v2-2)

@@ -17,7 +17,7 @@ export default class Home extends Component<Props> {
 
 
   handleLoginCheck(){
-    
+    $('.model').modal();
   }
 
   render() {
