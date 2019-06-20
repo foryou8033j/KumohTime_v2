@@ -4,9 +4,12 @@
 <img src="https://forthebadge.com/images/badges/built-with-love.svg">
 <img src="https://forthebadge.com/images/badges/uses-js.svg">
 
-</center>
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
-[![Build Status](https://semaphoreci.com/api/v1/foryou8033j/kumohtime_v2/branches/master/badge.svg)](https://semaphoreci.com/foryou8033j/kumohtime_v2)
+
+[![Build Status](https://semaphoreci.com/api/v1/foryou8033j/KumohTime_v2/branches/semaphore-setup/badge.svg)](https://semaphoreci.com/foryou8033j/KumohTime_v2)
+
+</center>
+
 
 #### Development 
 ```
