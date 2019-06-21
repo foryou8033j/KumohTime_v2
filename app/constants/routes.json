@@ -1,5 +1,6 @@
 {
   "LOADING": "/",
   "BOARD": "/board",
-  "LOGIN": "/login"
+  "LOGIN": "/login",
+  "LOGOUT": "/logout"
 }

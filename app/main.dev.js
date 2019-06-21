@@ -70,11 +70,11 @@ app.on('ready', async () => {
 
   mainWindow = new BrowserWindow({
     show: false,
-    width: 1024,
-    height: 728,
+    width: 1600,
+    height: 800,
   });
 
-  mainWindow.setMinimumSize(880, 500);
+  mainWindow.setMinimumSize(1600, 800);
 
   mainWindow.loadURL(`file://${__dirname}/app.html`);
 

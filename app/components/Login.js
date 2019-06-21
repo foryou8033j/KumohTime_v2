@@ -15,8 +15,8 @@ const trigger = <Button>로그인</Button>;
 class Login extends Component<Props> {
   props: Props;
   state = {
-    user_id: "",
-    user_pw: "",
+    user_id: "foryou8033j",
+    user_pw: "Wjd3TkaTj##",
     isLoginModalOpen: false,
 
     isModalOpen: false,
@@ -58,6 +58,28 @@ class Login extends Component<Props> {
         console.log(response);
         if (response.status === 200) {
           if (response.data.error === 0) {
+
+            localStorage.account = JSON.stringify({
+              type : response.data.type,
+              hash : response.data.hash
+            });
+
+            if(response.data.type == 'kumoh42'){
+              sessionStorage.account = JSON.stringify({
+                type : response.data.type,
+                name : response.data.data.user_name,
+                profile_image : response.data.data.profile_image,
+                department : response.data.data.department
+              });
+            }else{
+              sessionStorage.account = JSON.stringify({
+                type : response.data.type,
+                name : current.state.user_id,
+                profile_image : 'https://d2x5ku95bkycr3.cloudfront.net/App_Themes/Common/images/profile/0_200.png',
+                department : '원스톱 계정'
+              });
+            }
+
             current.setState({
               isLoginModalOpen: false,
               isVisibleLoginForm: false
@@ -103,6 +125,9 @@ class Login extends Component<Props> {
 
   handlePassLogin() {
     let current = this;
+
+    localStorage.removeItem('account');
+    sessionStorage.removeItem('account');
 
     this.setState({
       isVisibleLoginForm: false
@@ -229,7 +254,7 @@ class Login extends Component<Props> {
                       </div>
                     </div>
                     <div class="col s12 center">
-                      <p>로그인 정보를 가져오는 중</p>
+                      <p class="black-text">로그인 정보를 가져오는 중</p>
                     </div>
                   </div>
                 </Modal>

@@ -17,8 +17,8 @@ class Loading extends Component<Props> {
     loadingText: "",
     animation: false,
     isModalOpen: false,
-    modalHeader : "",
-    modalBody : ""
+    modalHeader: "",
+    modalBody: ""
   };
 
   changeMessage(message) {
@@ -44,36 +44,65 @@ class Loading extends Component<Props> {
     try {
       const liveResponse = await axios.get("https://kumoh42.com/");
       if (liveResponse.status === 200) {
-
         current.changeMessage("로그인 정보 확인 중");
 
-        setTimeout( async function(){
-          const accountResponse = await axios.get('https://kumoh42.com/app/data/service/kumohtime/accountCheck.php?hash=' + 'test');
-          if(accountResponse.status === 200){
-            current.setState({animation : false});
-            setTimeout(function(){
+        setTimeout(async function() {
+          if (localStorage.account) {
+
+            let account = JSON.parse(localStorage.account);
+
+            try{
+              const accountResponse = await axios.get("https://kumoh42.com/app/data/service/kumohtime/accountCheck.php?hash=" + account.hash);
+              if (accountResponse.status === 200) {
+                current.setState({ animation: false });
+
+                if(accountResponse.data.type == 'kumoh42'){
+                  sessionStorage.account = JSON.stringify({
+                    type : accountResponse.data.type,
+                    name : accountResponse.data.data.user_name,
+                    profile_image : accountResponse.data.data.profile_image,
+                    department : accountResponse.data.data.department
+                  });
+                }else{
+                  sessionStorage.account = JSON.stringify({
+                    type : accountResponse.data.type,
+                    name : accountResponse.data.data.user_id,
+                    profile_image : 'https://d2x5ku95bkycr3.cloudfront.net/App_Themes/Common/images/profile/0_200.png',
+                    department : '원스톱 계정'
+                  });
+                }
+
+                setTimeout(function() {
+                  current.props.history.push(routes.BOARD);
+                }, 300);
+              } else {
+                this.setState({
+                  modalHeader: "오류",
+                  modalBody: "클라우드 정보를 수신 할 수 없습니다.",
+                  isModalOpen: true
+                });
+              }
+            }catch (error){
+              setTimeout(function() {
+                current.props.history.push(routes.LOGIN);
+              }, 300);
+            }
+          }else{
+            setTimeout(function() {
               current.props.history.push(routes.LOGIN);
             }, 300);
-          }else{
-            this.setState({
-              modalHeader : "오류",
-              modalBody : "클라우드 정보를 수신 할 수 없습니다.",
-              isModalOpen : true
-            })
           }
         }, 500);
-
-      } else{
+      } else {
         throw new Error("Exception!!");
       }
     } catch (error) {
       this.setState({
-        modalHeader : "오류",
-        modalBody : "서버에 연결 할 수 없습니다.",
-        isModalOpen : true
-      })
+        modalHeader: "오류",
+        modalBody: "서버에 연결 할 수 없습니다.",
+        isModalOpen: true
+      });
     }
-
   }
 
   handleModalClose() {
@@ -150,10 +179,17 @@ class Loading extends Component<Props> {
             <Modal
               header={this.state.modalHeader}
               open={this.state.isModalOpen}
-              actions={[<Button waves="green" modal="close" flat>오프라인모드로 계속합니다</Button>, <Button waves="green" modal="close" flat>종료</Button>]}
+              actions={[
+                <Button waves="green" modal="close" flat>
+                  오프라인모드로 계속합니다
+                </Button>,
+                <Button waves="green" modal="close" flat>
+                  종료
+                </Button>
+              ]}
               options={{
                 dismissible: false,
-                onCloseEnd: () => this.handleModalClose(),
+                onCloseEnd: () => this.handleModalClose()
               }}
             >
               {this.state.modalBody}

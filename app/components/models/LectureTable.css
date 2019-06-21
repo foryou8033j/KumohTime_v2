@@ -4,3 +4,183 @@
   display: block;
   overflow: auto;
 }
+
+table {
+  font-size: 12px;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400);
+
+.blue {
+  background: #3498db;
+}
+
+.purple {
+  background: #9b59b6;
+}
+
+.navy {
+  background: #34495e;
+}
+
+.green {
+  background: #2ecc71;
+}
+
+.red {
+  background: #e74c3c;
+}
+
+.orange {
+  background: #f39c12;
+}
+
+.cs335, .cs426, .md303, .md352, .md313, .cs240 {
+  font-weight: 300;
+  cursor: pointer;
+}
+
+
+table {
+  font-family: 'Open Sans', Helvetica;
+  color: #000;
+  margin: auto;
+}
+
+.scrollAbleTable{
+    width: 100%;
+    height: 90vh;
+    display: block;
+    overflow: hidden;
+}
+
+.scrollAbleTable > thead{
+    display: block;
+}
+
+.scrollAbleTable > thead > tr > th{
+
+}
+
+.scrollAbleTable > tbody{
+    display: block;
+    height: 100%;
+    overflow: auto;
+}
+
+.scrollAbleTable > tbody > tr > td{
+    color: black;
+}
+
+.scrollAbleTable th:nth-of-type(1), .scrollAbleTable td:nth-of-type(1) { width: 10px; }
+.scrollAbleTable th:nth-of-type(2), .scrollAbleTable td:nth-of-type(2) { width: 50px; }
+.scrollAbleTable th:nth-of-type(3), .scrollAbleTable td:nth-of-type(3) { width: 50px; }
+.scrollAbleTable th:nth-of-type(4), .scrollAbleTable td:nth-of-type(4) { width: 200px; }
+.scrollAbleTable th:nth-of-type(5), .scrollAbleTable td:nth-of-type(5) { width: 100px; }
+.scrollAbleTable th:nth-of-type(6), .scrollAbleTable td:nth-of-type(6) { width: 60px; }
+.scrollAbleTable th:nth-of-type(7), .scrollAbleTable td:nth-of-type(7) { width: 80px; }
+.scrollAbleTable th:nth-of-type(8), .scrollAbleTable td:nth-of-type(8) { width: 120px; }
+.scrollAbleTable th:nth-of-type(9), .scrollAbleTable td:nth-of-type(9) { width: 120px; }
+
+
+table tr:nth-child(2n) {
+  background: #eff0f1;
+}
+table tr:nth-child(2n+3) {
+  background: #fff;
+}
+
+.scrollAbleTable>tbody>tr:hover {
+    background: #FFECB3;
+    cursor: pointer;
+}
+
+table th, table td {
+  padding: 1em;
+  width: 10em;
+  font-size: 1.0em;
+}
+
+.days, .time {
+  background: #E0E0E0;
+  text-transform: uppercase;
+  font-size: 0.6em;
+  text-align: center;
+}
+
+.time {
+  width: 3em !important;
+}
+
+.lecture_detail_item {
+    color: black !important;
+}
+
+/* Add this attribute to the element that needs a tooltip */
+[data-tooltip] {
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+/* Hide the tooltip content by default */
+[data-tooltip]:before,
+[data-tooltip]:after {
+  visibility: hidden;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  pointer-events: none;
+  -moz-transition: ease 0.5s all;
+  -o-transition: ease 0.5s all;
+  -webkit-transition: ease 0.5s all;
+  transition: ease 0.5s all;
+}
+
+/* Position tooltip above the element */
+[data-tooltip]:before {
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  margin-bottom: 5px;
+  margin-left: -80px;
+  padding: 7px;
+  width: 160px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  background-color: black;
+  color: #fff;
+  content: attr(data-tooltip);
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+/* Triangle hack to make tooltip look like a speech bubble */
+[data-tooltip]:after {
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  margin-left: -5px;
+  width: 0;
+  border-top: 5px solid black;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  content: " ";
+  font-size: 0;
+  line-height: 0;
+}
+
+/* Show tooltip content on hover */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  visibility: visible;
+  bottom: 90%;
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+
+.timeTableHeader{
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
