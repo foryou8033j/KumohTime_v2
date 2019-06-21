@@ -3,54 +3,14 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background-color: rgba(255, 255 ,255 ,0.0);
   text-align: center;
 }
 
 .container {
 	width: 100wh;
-	height: 100vh;
-	color: #fff;
-	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-	background-size: 400% 400%;
-	-webkit-animation: Gradient 15s ease infinite;
-	-moz-animation: Gradient 15s ease infinite;
-	animation: Gradient 15s ease infinite;
-}
-
-@-webkit-keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
-}
-
-@-moz-keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
-}
-
-@keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
+  height: 100vh;
+  color: #fff;
 }
 
 .userForm {
@@ -68,7 +28,7 @@
 
 .inputStyle input{
   color: white !important;
-  border-bottom : 1px solid #EEEEEE !important;
+  border-bottom : 1px solid #EEE !important;
 }
 
 .inputStyle input.focus + label {
@@ -85,6 +45,7 @@
   border-bottom: 1px solid #fff !important;
   box-shadow: 0 1px 0 0 #fff !important;
 }
+
 /* invalid color */
 .inputStyle input.invalid {
   border-bottom: 1px solid #fff !important;
