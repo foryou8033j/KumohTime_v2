@@ -8,7 +8,7 @@
 <br/>
 
 master<br/>
-[![Build Status](https://semaphoreci.com/api/v1/foryou8033j/kumohtime_v2-2/branches/master/badge.svg)](https://semaphoreci.com/foryou8033j/kumohtime_v2-2)
+[![Build Status](https://semaphoreci.com/api/v1/foryou8033j/kumohtime_v2/branches/master/badge.svg)](https://semaphoreci.com/foryou8033j/kumohtime_v2)
 
 dev<br/>
 [![Build Status](https://semaphoreci.com/api/v1/foryou8033j/kumohtime_v2/branches/dev/badge.svg)](https://semaphoreci.com/foryou8033j/kumohtime_v2)
