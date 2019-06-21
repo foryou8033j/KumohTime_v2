@@ -15,8 +15,8 @@ const trigger = <Button>로그인</Button>;
 class Login extends Component<Props> {
   props: Props;
   state = {
-    user_id: "foryou8033j",
-    user_pw: "Wjd3TkaTj##",
+    user_id: "",
+    user_pw: "",
     isLoginModalOpen: false,
 
     isModalOpen: false,

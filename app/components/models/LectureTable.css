@@ -124,10 +124,10 @@ table th, table td {
 }
 
 /* Hide the tooltip content by default */
-[data-tooltip]:before,
-[data-tooltip]:after {
+[data-tooltip]::before,
+[data-tooltip]::after {
   visibility: hidden;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  filter: progid:dximagetransform.microsoft.alpha(Opacity=0);
   opacity: 0;
   pointer-events: none;
   -moz-transition: ease 0.5s all;
@@ -137,7 +137,7 @@ table th, table td {
 }
 
 /* Position tooltip above the element */
-[data-tooltip]:before {
+[data-tooltip]::before {
   position: absolute;
   bottom: 110%;
   left: 50%;
@@ -157,7 +157,7 @@ table th, table td {
 }
 
 /* Triangle hack to make tooltip look like a speech bubble */
-[data-tooltip]:after {
+[data-tooltip]::after {
   position: absolute;
   bottom: 110%;
   left: 50%;
@@ -172,15 +172,15 @@ table th, table td {
 }
 
 /* Show tooltip content on hover */
-[data-tooltip]:hover:before,
-[data-tooltip]:hover:after {
+[data-tooltip]:hover::before,
+[data-tooltip]:hover::after {
   visibility: visible;
   bottom: 90%;
-  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  filter: progid:dximagetransform.microsoft.alpha(enabled=false);
   opacity: 1;
 }
 
 .timeTableHeader{
-  margin: 0px 0px 0px 0px;
-  padding: 0px 0px 0px 0px;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
 }
