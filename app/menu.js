@@ -184,14 +184,18 @@ export default class MenuBuilder {
   buildDefaultTemplate() {
     const templateDefault = [
       {
-        label: '&File',
+        label: '&파일',
         submenu: [
           {
-            label: '&Open',
+            label: '&시간표 저장',
+            accelerator: 'Ctrl+S'
+          },
+          {
+            label: '&시간표 불러오기',
             accelerator: 'Ctrl+O'
           },
           {
-            label: '&Close',
+            label: '&닫기',
             accelerator: 'Ctrl+W',
             click: () => {
               this.mainWindow.close();
@@ -200,19 +204,19 @@ export default class MenuBuilder {
         ]
       },
       {
-        label: '&View',
+        label: '&보기',
         submenu:
           process.env.NODE_ENV === 'development'
             ? [
                 {
-                  label: '&Reload',
+                  label: '&새로고침',
                   accelerator: 'Ctrl+R',
                   click: () => {
                     this.mainWindow.webContents.reload();
                   }
                 },
                 {
-                  label: 'Toggle &Full Screen',
+                  label: 'Toggle &전체화면 전환',
                   accelerator: 'F11',
                   click: () => {
                     this.mainWindow.setFullScreen(
@@ -221,7 +225,7 @@ export default class MenuBuilder {
                   }
                 },
                 {
-                  label: 'Toggle &Developer Tools',
+                  label: 'Toggle &개발자 도구',
                   accelerator: 'Alt+Ctrl+I',
                   click: () => {
                     this.mainWindow.toggleDevTools();
@@ -230,7 +234,7 @@ export default class MenuBuilder {
               ]
             : [
                 {
-                  label: 'Toggle &Full Screen',
+                  label: 'Toggle &전체화면 전환',
                   accelerator: 'F11',
                   click: () => {
                     this.mainWindow.setFullScreen(
@@ -241,30 +245,30 @@ export default class MenuBuilder {
               ]
       },
       {
-        label: 'Help',
+        label: '정보',
         submenu: [
           {
-            label: 'Learn More',
+            label: '금오사이 바로가기',
             click() {
-              shell.openExternal('http://electron.atom.io');
+              shell.openExternal('https://kumoh42.com/');
             }
           },
           {
-            label: 'Documentation',
+            label: '앱 다운로드',
             click() {
               shell.openExternal(
-                'https://github.com/atom/electron/tree/master/docs#readme'
+                'https://kumoh42.com/app_promote'
               );
             }
           },
           {
-            label: 'Community Discussions',
+            label: '오류 제보',
             click() {
-              shell.openExternal('https://discuss.atom.io/c/electron');
+              shell.openExternal('https://github.com/foryou8033j/KumohTime_v2/issues');
             }
           },
           {
-            label: 'Search Issues',
+            label: '정보',
             click() {
               shell.openExternal('https://github.com/atom/electron/issues');
             }

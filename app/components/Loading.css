@@ -1,0 +1,11 @@
+.container {
+  background-color: #ffecb3;
+}
+
+.loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}

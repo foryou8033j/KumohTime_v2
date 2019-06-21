@@ -14,7 +14,7 @@ export default class Board extends Component<Props> {
       <div className={styles.container} data-tid="container">
         <h2>KumohTime</h2>
         <div data-tid="backButton">
-          <Link to={routes.HOME}>
+          <Link to={routes.LOADING}>
             <i className="fa fa-arrow-left fa-3x" />
           </Link>
         </div>
