@@ -102,6 +102,9 @@ class Loading extends Component<Props> {
                         department: "원스톱 계정"
                       });
                     }
+                    setTimeout(function() {
+                      current.props.history.push(routes.BOARD);
+                    }, 1000);
                   } else {
                     this.setState({
                       modalHeader: "오류",

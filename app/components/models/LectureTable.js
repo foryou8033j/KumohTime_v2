@@ -7,7 +7,8 @@ import { Animated } from "react-animated-css";
 
 export default class LectureTable extends Component {
   state = {
-    lecture: []
+    lecture: [],
+    isLoadingModalOpen : true
   };
 
   componentWillMount(){
@@ -35,6 +36,7 @@ export default class LectureTable extends Component {
         });
         current.setState({ lecture });
         console.log(current.state.lecture);
+        current.setState({isLoadingModalOpen : false});
       });
     } catch (error) {
       console.log(error);
