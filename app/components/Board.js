@@ -41,9 +41,9 @@ class Board extends Component<Props> {
     var myInformation = <SideNavItem waves href="#">내 정보</SideNavItem>;
     var loginButton;
     if(isLoggedIn)
-      loginButton = <Link to={routes.LOGOUT}><SideNavItem waves href={routes.LOGOUT}>로그아웃</SideNavItem></Link>;
+      loginButton = <Link to={routes.LOGOUT}><SideNavItem waves>로그아웃</SideNavItem></Link>;
     else
-      loginButton = <Link to={routes.LOGIN}><SideNavItem waves href={routes.LOGIN}>로그인</SideNavItem></Link>;
+      loginButton = <Link to={routes.LOGIN}><SideNavItem waves>로그인</SideNavItem></Link>;
 
     return (
       <div className={styles.container} data-tid="container">
@@ -56,7 +56,7 @@ class Board extends Component<Props> {
             }
             options={{ closeOnClick: true }}
           >
-            <SideNavItem userView Subheader user={this.state} />
+            <SideNavItem userView subheader user={this.state} />
             <SideNavItem waves href="#">
               보관된 시간표 목록
             </SideNavItem>

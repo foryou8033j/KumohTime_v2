@@ -1,8 +1,24 @@
 .lectureTable{
   width: 100%;
-  height: 90vh;
+  height: 87vh;
   display: block;
   overflow: auto;
+}
+
+.lectureTable>tbody>tr{
+  line-height: 1em
+}
+
+.lectureTable tr:nth-child(2n) {
+  background: #eff0f1;
+}
+.lectureTable tr:nth-child(2n+3) {
+  background: #fff;
+}
+
+.lectureTable>tbody>tr:hover {
+    background: #FFECB3;
+    cursor: pointer;
 }
 
 table {
@@ -181,6 +197,6 @@ table th, table td {
 }
 
 .timeTableHeader{
-  margin: 0 0 0 0;
+  margin: 0 0 20px 0;
   padding: 0 0 0 0;
 }
