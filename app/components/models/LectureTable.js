@@ -11,6 +11,8 @@ export default class LectureTable extends Component {
     isLoadingModalOpen : true
   };
 
+
+
   componentWillMount(){
 
   }
@@ -35,12 +37,16 @@ export default class LectureTable extends Component {
           lecture.push(item);
         });
         current.setState({ lecture });
-        console.log(current.state.lecture);
         current.setState({isLoadingModalOpen : false});
       });
     } catch (error) {
       console.log(error);
     }
+  }
+
+  handleClickLecture(e, code){
+    e.preventDefault();
+    console.log(code);
   }
 
   render() {
@@ -68,7 +74,7 @@ export default class LectureTable extends Component {
                 </thead>
                 <tbody>
                   {this.state.lecture.map(item => (
-                    <Row item={item} />
+                    <Row item={item} current={this} />
                   ))}
                 </tbody>
               </table>
@@ -268,8 +274,8 @@ export default class LectureTable extends Component {
   }
 }
 
-const Row = ({ item }) => (
-  <tr className={``}>
+const Row = ({ item, current }) => (
+  <tr className={``} id={item.개설교과목코드} onClick={(e) => current.handleClickLecture(e, item.개설교과목코드)}>
     <td>{item.TimeTable_id}</td>
     <td>{item.년도}</td>
     <td>{item.학기}</td>
