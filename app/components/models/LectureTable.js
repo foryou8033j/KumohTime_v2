@@ -11,6 +11,8 @@ export default class LectureTable extends Component {
     isLoadingModalOpen : true
   };
 
+
+
   componentWillMount(){
 
   }

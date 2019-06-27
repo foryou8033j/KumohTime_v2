@@ -114,7 +114,6 @@ class Loading extends Component<Props> {
                         current.props.history.push(routes.LOGIN);
                       }, 1000);
                     }
-
                   } else {
                     this.setState({
                       modalHeader: "오류",
