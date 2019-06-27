@@ -87,13 +87,18 @@ class Loading extends Component<Props> {
                     current.setState({ animation: false });
 
                     if (accountResponse.data.type == "kumoh42") {
+                      console.log("금오사이 계정 자동 로그인");
                       sessionStorage.account = JSON.stringify({
                         type: accountResponse.data.type,
                         name: accountResponse.data.data.user_name,
                         profile_image: accountResponse.data.data.profile_image,
                         department: accountResponse.data.data.department
                       });
-                    } else {
+                      setTimeout(function() {
+                        current.props.history.push(routes.BOARD);
+                      }, 1000);
+                    } else if (accountResponse.data.type == 'onestop') {
+                      console.log("원스톱 계정 자동 로그인");
                       sessionStorage.account = JSON.stringify({
                         type: accountResponse.data.type,
                         name: accountResponse.data.data.user_id,
@@ -101,7 +106,15 @@ class Loading extends Component<Props> {
                           "https://d2x5ku95bkycr3.cloudfront.net/App_Themes/Common/images/profile/0_200.png",
                         department: "원스톱 계정"
                       });
+                      setTimeout(function() {
+                        current.props.history.push(routes.BOARD);
+                      }, 1000);
+                    }else{
+                      setTimeout(function() {
+                        current.props.history.push(routes.LOGIN);
+                      }, 1000);
                     }
+
                   } else {
                     this.setState({
                       modalHeader: "오류",

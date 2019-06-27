@@ -7,7 +7,8 @@ import { Animated } from "react-animated-css";
 
 export default class LectureTable extends Component {
   state = {
-    lecture: []
+    lecture: [],
+    isLoadingModalOpen : true
   };
 
   componentWillMount(){
@@ -18,7 +19,7 @@ export default class LectureTable extends Component {
     let current = this;
     setTimeout(function(){
       current.loadLectureList();
-    }, 200);
+    }, 300);
   }
 
    loadLectureList() {
@@ -34,14 +35,20 @@ export default class LectureTable extends Component {
           lecture.push(item);
         });
         current.setState({ lecture });
-        console.log(current.state.lecture);
+        current.setState({ isLoadingModalOpen : false });
+        //console.log(current.state.lecture);
       });
     } catch (error) {
       console.log(error);
     }
   }
 
+  handleClickLecture(item) {
+    console.log(item);
+  }
+
   render() {
+    let current = this;
     return (
       <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>
         <div class="row">
@@ -66,7 +73,7 @@ export default class LectureTable extends Component {
                 </thead>
                 <tbody>
                   {this.state.lecture.map(item => (
-                    <Row item={item} />
+                    <Row item={item} current={current} />
                   ))}
                 </tbody>
               </table>
@@ -266,8 +273,8 @@ export default class LectureTable extends Component {
   }
 }
 
-const Row = ({ item }) => (
-  <tr className={``}>
+const Row = ({item, current}) => (
+  <tr className={``} onClick={()=>current.handleClickLecture(item)}>
     <td>{item.TimeTable_id}</td>
     <td>{item.년도}</td>
     <td>{item.학기}</td>

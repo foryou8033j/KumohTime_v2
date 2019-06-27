@@ -17,7 +17,7 @@ class Logout extends Component<Props> {
   async logout() {
     sessionStorage.removeItem('account');
     localStorage.removeItem('account');
-    this.props.history.push(routes.LOADING);
+    this.props.history.push(routes.LOGIN);
   }
 
 

@@ -28,8 +28,6 @@ export default class MenuBuilder {
   }
 
   setupDevelopmentEnvironment() {
-    //this.mainWindow.openDevTools();
-    this.mainWindow.setAlwaysOnTop(true, 'floating')
     this.mainWindow.webContents.on('context-menu', (e, props) => {
       const { x, y } = props;
 
